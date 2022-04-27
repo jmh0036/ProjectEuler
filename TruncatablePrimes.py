@@ -21,9 +21,11 @@ def LeftTruncatablePrime(prime):
     return True
 
 DoubleTruncatablePrimes = []
-for i in range(10,1000000):
+i = 10
+while len(DoubleTruncatablePrimes) < 11:
     if IsPrime(i):
         if RightTruncatablePrime(i) and LeftTruncatablePrime(i):
             DoubleTruncatablePrimes.append(i)
+    i += 1
 
 print('There are',len(DoubleTruncatablePrimes),'truncatable primes.  They are',DoubleTruncatablePrimes,'Their sum is',sum(DoubleTruncatablePrimes))
